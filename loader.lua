@@ -8,6 +8,7 @@ do
                     game.Loaded:Wait()
                 until game:IsLoaded()
             end
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ryleebrooo/Synthetic/refs/heads/main/memorybypass.lua"))()
             script_key = readfile("DOMINIX.txt")
             rconsoleprint("fallen survival")
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/0667043257e1e4e4b63db2a829cdd96c.lua"))()
