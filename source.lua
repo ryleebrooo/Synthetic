@@ -3999,16 +3999,12 @@
 			end)	
 
 			task.spawn(function()
-				while true do 
+				while true do
 					task.wait()
-					if flags[cfg.flag .. "_RAINBOW_FLAG"] then 
-						cfg.set(
-							hsv(math.abs(math.sin(tick())), 
-							s, 
-							v
-						), a) 
-					end     
-				end     
+					if flags[cfg.flag .. "_RAINBOW_FLAG"] then
+						cfg.set(hsv(math.abs(math.sin(tick())), s, v), a)
+					end
+				end
 			end)
 
 			cfg.set(cfg.color, cfg.alpha)
