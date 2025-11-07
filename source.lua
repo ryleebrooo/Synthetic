@@ -3600,28 +3600,35 @@
 					BorderSizePixel = 0;
 				});
 				
-				local RainbowToggle = setmetatable(cfg, library):toggle({name = "Rainbow", flag = cfg.flag .. "_RAINBOW_FLAG"})
+				local RainbowToggle =
+					setmetatable(cfg, library):toggle({ name = "Rainbow", flag = cfg.flag .. "_RAINBOW_FLAG" })
 
-				cfg.holder = library:create( "Frame" , {
-					Parent = colorpicker_holder;
-					Name = "\0";
-					Position = dim2(1, 2, 1, -23);
-					BorderColor3 = rgb(0, 0, 0);
-					AnchorPoint = vec2(1, 0);
-					Size = dim2(1, -80, 0, 0);
-					BorderSizePixel = 0;
-				});
-				
+				cfg.holder = library:create("Frame", {
+					Parent = colorpicker_holder,
+					Name = "\0",
+					Position = dim2(1, 2, 1, -23),
+					BorderColor3 = rgb(0, 0, 0),
+					AnchorPoint = vec2(1, 0),
+					Size = dim2(1, -80, 0, 0),
+					BorderSizePixel = 0,
+				})
+
 				local section = setmetatable(cfg, library)
 				section:button_holder({})
-				section:button({name = "Copy", callback = function()
-					library.copied_flag = flags[cfg.flag]
-					library.is_rainbow = cfg.flag .. "_RAINBOW_FLAG"
-				end})
-				section:button({name = "Paste", callback = function()
-					RainbowToggle.set(library.is_rainbow)
-					cfg.set(library.copied_flag.Color, library.copied_flag.Transparency)
-				end})
+				section:button({
+					name = "Copy",
+					callback = function()
+						library.copied_flag = flags[cfg.flag]
+						library.is_rainbow = flags[cfg.flag .. "_RAINBOW_FLAG"] or false
+					end,
+				})
+				section:button({
+					name = "Paste",
+					callback = function()
+						RainbowToggle.set(library.is_rainbow)
+						cfg.set(library.copied_flag.Color, library.copied_flag.Transparency)
+					end,
+				})
 
 				local main_holder_inline = library:create("Frame", {
 					Parent = main_holder,
