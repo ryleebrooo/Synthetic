@@ -84,7 +84,7 @@
 		current_element_open, 
 		dock_button_holder,  
 		old_config; 
-		, 
+		font, 
 		keybind_list,
 		binds = {}, 
 		
