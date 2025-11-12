@@ -1,3 +1,6 @@
+-- REASON: Dumbass customer put their library in a request and flexed his non existant security and ended up getting it leaked by himself... 😭
+-- The code here is horrendous this is my 2nd library, the added on code was made to suit the old code however I should have just converted to a newer version of my code kind of an oopsie. 
+
 -- variables
 	local uis = cloneref(game:GetService("UserInputService"))
 	local players = cloneref(game:GetService("Players"))
@@ -66,9 +69,9 @@
 
 -- library init
 	local library = {
-		directory = "Psilocybin",
+		directory = "Synthetic",
 		folders = {
-			"/fonts",
+			"/s",
 			"/configs",
 			"/images"
 		},
@@ -104,12 +107,12 @@
 		preset = {
 			["outline"] = hex("#0A0A0A"), -- 
 			["inline"] = hex("#2D2D2D"), --
-			["accent"] = hex("#75d3ff"), --
+			["accent"] = hex("#6bc1e9"), --
 			["high_contrast"] = hex("#141414"),
 			["low_contrast"] = hex("#1E1E1E"),
 			["text"] = hex("#B4B4B4"),
 			["text_outline"] = rgb(0, 0, 0),
-			["glow"] = hex("#75d3ff"), 
+			["glow"] = hex("#6bc1e9"), 
 		},
 
 		utility = {
@@ -219,7 +222,7 @@
 		makefolder(library.directory .. path)
 	end 
 
-	writefile("ffff.ttf", game:HttpGet("https://github.com/weasely111/storage/raw/refs/heads/main/fonts/smallest_pixel-7.ttf"))
+	writefile("ffff.ttf", game:HttpGet("https://github.com/JuixyV2/utils/raw/refs/heads/main/ProggyClean.ttf"))
 
 	local tahoma = {
 		name = "SmallestPixel7",
@@ -1525,7 +1528,7 @@
 
 			-- main window
 				local main_window = library:panel({
-					name = properties and properties.name or "Psilocybin | ", 
+					name = properties and properties.name or "Synthetic | ", 
 					size = dim2(0, 604, 0, 628),
 					position = dim2(0, (camera.ViewportSize.X / 2) - 302 - 96, 0, (camera.ViewportSize.Y / 2) - 421 - 12),
 					image = "rbxassetid://98823308062942",
@@ -1630,11 +1633,11 @@
 					image = "rbxassetid://115194686863276",
 				})
 
-				local watermark = library:watermark({default = os.date('Psilocybin |  - %b %d %Y - %H:%M:%S')})  
+				local watermark = library:watermark({default = os.date('Synthetic |  - %b %d %Y - %H:%M:%S')})  
 
 				task.spawn(function()
 					while task.wait(1) do 
-						watermark.change_text(os.date('Psilocybin - Beta - %b %d %Y - %H:%M:%S'))
+						watermark.change_text(os.date('Synthetic - Beta - %b %d %Y - %H:%M:%S'))
 					end 
 				end) 
 
