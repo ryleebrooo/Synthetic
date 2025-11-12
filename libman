@@ -219,23 +219,23 @@
 		makefolder(library.directory .. path)
 	end 
 
-	writefile("ffff.ttf", game:HttpGet("https://github.com/ZilerZ/sexy-fonts/raw/refs/heads/main/fs-tahoma-8px.ttf"))
+	writefile("font.ttf", game:HttpGet("https://github.com/weasely111/storage/raw/refs/heads/main/fonts/smallest_pixel-7.ttf"))
 
-	local tahoma = {
+	local smallest_pixel = {
 		name = "SmallestPixel7",
 		faces = {
 			{
 				name = "Regular",
 				weight = 400,
 				style = "normal",
-				assetId = getcustomasset("ffff.ttf")
+				assetId = getcustomasset("font.ttf")
 			}
 		}
 	}
 
-	writefile("dddd.ttf", http_service:JSONEncode(tahoma))
+	writefile("dddd.ttf", http_service:JSONEncode(smallest_pixel))
 
-	library.font = Font.new(getcustomasset("dddd.ttf"), Enum.FontWeight.Regular)
+	library.font = Font.new(getcustomasset("font.ttf"), Enum.FontWeight.Regular)
 
 	local config_holder 
 -- 
