@@ -71,7 +71,7 @@
 	local library = {
 		directory = "Synthetic",
 		folders = {
-			"/fonts",
+			"/s",
 			"/configs",
 			"/images"
 		},
@@ -87,7 +87,7 @@
 		current_element_open, 
 		dock_button_holder,  
 		old_config; 
-		font, 
+		, 
 		keybind_list,
 		binds = {}, 
 		
@@ -222,7 +222,7 @@
 		makefolder(library.directory .. path)
 	end 
 
-	writefile("ffff.ttf", game:HttpGet("https://github.com/weasely111/beta/raw/refs/heads/main/fs-tahoma-8px.ttf"))
+	writefile("ffff.ttf", game:HttpGet("https://github.com/i77lhm/storage/blob/main/s/fs-tahoma-8px.ttf"))
 
 	local tahoma = {
 		name = "SmallestPixel7",
